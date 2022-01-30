@@ -1,0 +1,43 @@
+<!--se exporta el archivo layout.html, donde incrustraras este archivo-->
+{% extends 'layout.html' %}
+
+{% block body %}
+
+
+<form action="/update/{{contact.0}}" method="POST">
+    <!--    la posicion 0 corresponde al id de la tupla, por eso no se coloca contact.0 
+    <input type="text" name='fullname' placeholder="Fullname" value="{{ contact.1 }}">
+    <input type="text" name='phone' placeholder="Phone" value="{{ contact.2 }}">
+    <input type="text" name='email' placeholder="Email" value="{{ contact.3 }}">
+        <button type="submit">
+        Save
+    </button>   
+    
+    -->
+    <div class="mb-3">
+        <label for="ingresoNombre" class="form-label">Nombre</label>
+        <input type="text" name='fullname' placeholder="Fullname" value="{{ contact.1 }}" class="form-control">
+    </div>
+
+    <div class="mb-3">
+        <label for="ingresoFono" class="form-label">Telefono</label>
+        <input type="text" name='phone' placeholder="Phone" value="{{ contact.2 }}" class="form-control">
+    </div>
+    
+    
+    <div class="mb-3">    
+        <label for="exampleInputEmail1" class="form-label">Correo Electrónico</label>
+        <input type="email" name='email' class="form-control" placeholder="Email" value="{{ contact.3 }}" aria-describedby="emailHelp">
+        <div id="emailHelp" class="form-text">Favor ingrese su correo profesional</div>
+    </div>
+
+    <button type="submit" class="btn btn-primary"> Save </button>
+
+
+<!---->
+
+</form>
+
+
+
+{% endblock %}
